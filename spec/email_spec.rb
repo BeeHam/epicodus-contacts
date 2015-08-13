@@ -33,4 +33,12 @@ describe('Email') do
       expect(Email.all()).to(eq([test_email]))
     end
   end
+
+  describe('.clear') do
+    it("empties all of the saved emails") do
+      Email.new("johnsmith@123.com", "work").save()
+      Email.clear()
+      expect(Email.all()).to(eq([]))
+    end
+  end
 end

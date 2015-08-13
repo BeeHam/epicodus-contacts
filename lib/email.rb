@@ -21,4 +21,8 @@ class Email
   define_method(:save) do
     @@email.push(self)
   end
+
+  define_singleton_method(:clear) do
+    @@email = []
+  end
 end
