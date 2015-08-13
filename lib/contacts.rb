@@ -46,6 +46,10 @@ class Contacts
     @info.push(email)
   end
 
+  define_method(:add_phone) do |phone|
+    @info.push(phone)
+  end
+
   define_singleton_method(:find) do |last_name|
     found_contact = nil
     @@contacts.each() do |contact|

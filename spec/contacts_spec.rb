@@ -1,6 +1,7 @@
 require('rspec')
 require('contacts')
 require('email')
+require('phone')
 
 describe(Contacts) do
   before() do
@@ -71,6 +72,15 @@ describe(Contacts) do
       test_email = Email.new("johnsmith@123.com", "work")
       test_contact.add_email(test_email)
       expect(test_contact.info()).to(eq([test_email]))
+    end
+  end
+
+  describe('#add_phone') do
+    it("adds a phone number ta an existing contact") do
+      test_contact = Contacts.new("John", "Smith", "Programmer", "The Matrix")
+      test_phone = Phone.new(503, 5551234, "work")
+      test_contact.add_phone(test_phone)
+      expect(test_contact.info()).to(eq([test_phone]))
     end
   end
 end
