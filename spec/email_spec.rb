@@ -7,7 +7,7 @@ describe('Email') do
   describe('#address') do
     it("returns the email address of the contact") do
       test_email = Email.new("johnsmith@123.com", "work")
-      # test_email.save()
+      #test_email.save()
       expect(test_email.address()).to(eq("johnsmith@123.com"))
     end
   end
@@ -15,7 +15,14 @@ describe('Email') do
   describe('#type') do
     it("returns the type of email address of the contact") do
       test_email = Email.new("johnsmith@123.com", "work")
+      #test_email.save()
       expect(test_email.type()).to(eq("work"))
+    end
+  end
+
+  describe(".all") do
+    it("is empty at first") do
+      expect(Email.all()).to(eq([]))
     end
   end
 end

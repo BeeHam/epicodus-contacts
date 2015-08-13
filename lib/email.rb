@@ -13,4 +13,8 @@ class Email
   define_method(:type) do
     @type
   end
+
+  define_singleton_method(:all) do
+    @@email = []
+  end
 end
