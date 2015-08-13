@@ -22,4 +22,8 @@ class Phone
   define_singleton_method(:all) do
     @@phone
   end
+
+  define_method(:save) do
+    @@phone.push(self)
+  end
 end

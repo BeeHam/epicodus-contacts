@@ -31,4 +31,12 @@ describe('Phone') do
       expect(Phone.all()).to(eq([]))
     end
   end
+
+  describe('#save') do
+    it('saves a phone number to an array') do
+      test_phone = Phone.new(503, 5551234, "work")
+      test_phone.save()
+      expect(Phone.all()).to(eq([test_phone]))
+    end
+  end
 end
