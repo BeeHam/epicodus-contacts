@@ -9,4 +9,8 @@ class Address
     @zip = attributes.fetch(:zip)
     @type = attributes.fetch(:type)
   end
+
+    define_singleton_method(:all) do
+      @@address
+    end
 end

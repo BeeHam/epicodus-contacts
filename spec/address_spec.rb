@@ -40,4 +40,10 @@ describe('Address') do
       expect(test_address.type()).to(eq('work'))
     end
   end
+
+  describe('.all') do
+    it('is empty at first') do
+      expect(Address.all()).to(eq([]))
+    end
+  end
 end
