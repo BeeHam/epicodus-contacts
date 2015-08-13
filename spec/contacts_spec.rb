@@ -33,9 +33,18 @@ describe(Contacts) do
       expect(test_contact.company()).to(eq("The Matrix"))
     end
   end
+
   describe('.all') do
     it("is empty at first") do
       expect(Contacts.all()).to(eq([]))
+    end
+  end
+
+  describe('#save') do
+    it("adds a new contact to the array of saved contacts") do
+      test_contact = Contacts.new("John", "Smith", "Programmer", "The Matrix")
+      test_contact.save()
+      expect(Contacts.all()).to(eq([test_contact]))
     end
   end
 end
