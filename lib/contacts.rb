@@ -7,6 +7,7 @@ class Contacts
     @last_name = last_name
     @job = job
     @company = company
+    @info = []
   end
 
   define_method(:first_name) do
@@ -25,6 +26,10 @@ class Contacts
     @company
   end
 
+  define_method(:info) do
+    @info
+  end
+
   define_singleton_method(:all) do
     @@contacts
   end
@@ -35,6 +40,10 @@ class Contacts
 
   define_singleton_method(:clear) do
     @@contacts = []
+  end
+
+  define_method(:add_email) do |email|
+    @info.push(email)
   end
 
   define_singleton_method(:find) do |last_name|

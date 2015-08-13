@@ -65,4 +65,12 @@ describe(Contacts) do
     end
   end
 
+  describe('#add_email') do
+    it("adds an email to an existing contact") do
+      test_contact = Contacts.new("John", "Smith", "Programmer", "The Matrix")
+      test_email = Email.new("johnsmith@123.com", "work")
+      test_contact.add_email(test_email)
+      expect(test_contact.info()).to(eq([test_email]))
+    end
+  end
 end
