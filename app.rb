@@ -28,3 +28,8 @@ post('/contacts_list') do
   @contact = Contacts.all()
   erb(:success)
 end
+
+get('/contact_info/:last_name') do
+  @contacts =Contacts.find(params.fetch('last_name'))
+  erb(:contact_info_form)
+end
