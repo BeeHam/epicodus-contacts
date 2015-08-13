@@ -1,5 +1,6 @@
 require('rspec')
 require('contacts')
+require('email')
 
 describe(Contacts) do
   before() do
