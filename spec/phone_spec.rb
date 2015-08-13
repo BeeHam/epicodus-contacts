@@ -18,4 +18,11 @@ describe('Phone') do
       expect(test_phone.number()).to(eq(5551234))
     end
   end
+
+  describe('#type') do
+    it('returns type of number') do
+      test_phone = Phone.new(503, 5551234, "work")
+      expect(test_phone.type()).to(eq("work"))
+    end
+  end
 end

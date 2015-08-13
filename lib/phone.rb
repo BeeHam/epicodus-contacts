@@ -14,4 +14,8 @@ class Phone
   define_method(:number) do
     @number
   end
+
+  define_method(:type) do
+    @type
+  end
 end
