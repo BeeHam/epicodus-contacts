@@ -57,4 +57,12 @@ describe(Contacts) do
     end
   end
 
+  describe('.find') do
+    it('returns a contact by last name') do
+      test_contact = Contacts.new("John", "Smith", "Programmer", "The Matrix")
+      test_contact.save()
+      expect(Contacts.find("Smith")).to(eq(test_contact))
+    end
+  end
+
 end

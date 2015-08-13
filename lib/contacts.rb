@@ -37,4 +37,14 @@ class Contacts
     @@contacts = []
   end
 
+  define_singleton_method(:find) do |last_name|
+    found_contact = nil
+    @@contacts.each() do |contact|
+      if contact.last_name().eql?(last_name)
+        found_contact = contact
+      end
+    end
+    found_contact
+  end
+
 end
