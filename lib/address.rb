@@ -17,4 +17,8 @@ class Address
   define_method(:save) do
     @@address.push(self)
   end
+
+  define_singleton_method(:clear) do
+    @@address = []
+  end
 end

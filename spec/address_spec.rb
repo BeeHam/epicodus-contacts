@@ -51,7 +51,15 @@ describe('Address') do
     it('saves an address to an array') do
       test_address = Address.new({:street => '123 Main St', :city =>'Sunnyside', :state => 'OR', :zip => '98155', :type => 'work'})
       test_address.save()
-      expect(Address.all()).to(eq([test_address]))  
+      expect(Address.all()).to(eq([test_address]))
+    end
+  end
+
+  describe('.clear') do
+    it('empties out all saved addresses') do
+      Address.new({:street => '123 Main St', :city =>'Sunnyside', :state => 'OR', :zip => '98155', :type => 'work'})
+      Address.clear()
+      expect(Address.all()).to(eq([]))
     end
   end
 end
