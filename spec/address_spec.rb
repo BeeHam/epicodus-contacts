@@ -26,4 +26,11 @@ describe('Address') do
       expect(test_address.state()).to(eq('OR'))
     end
   end
+
+  describe('#zip') do
+    it('returns the zip code of the address') do
+      test_address = Address.new({:street => '123 Main St', :city =>'Sunnyside', :state => 'OR', :zip => '98155', :type => 'work'})
+      expect(test_address.zip()).to(eq('98155'))
+    end  
+  end
 end
