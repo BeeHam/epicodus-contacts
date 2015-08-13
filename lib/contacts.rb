@@ -1,9 +1,10 @@
 class Contacts
 
-  define_method(:initialize) do |first_name, last_name, job|
+  define_method(:initialize) do |first_name, last_name, job, company|
     @first_name = first_name
     @last_name = last_name
     @job = job
+    @company = company
   end
 
   define_method(:first_name) do
@@ -16,5 +17,9 @@ class Contacts
 
   define_method(:job) do
     @job
+  end
+
+  define_method(:company) do
+    @company
   end
 end
