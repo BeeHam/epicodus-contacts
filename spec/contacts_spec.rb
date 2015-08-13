@@ -33,4 +33,9 @@ describe(Contacts) do
       expect(test_contact.company()).to(eq("The Matrix"))
     end
   end
+  describe('.all') do
+    it("is empty at first") do
+      expect(Contacts.all()).to(eq([]))
+    end
+  end
 end
