@@ -10,4 +10,8 @@ class Phone
   define_method(:area) do
     @area
   end
+
+  define_method(:number) do
+    @number
+  end
 end
