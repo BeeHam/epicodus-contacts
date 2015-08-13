@@ -46,4 +46,12 @@ describe('Address') do
       expect(Address.all()).to(eq([]))
     end
   end
+
+  describe('#save') do
+    it('saves an address to an array') do
+      test_address = Address.new({:street => '123 Main St', :city =>'Sunnyside', :state => 'OR', :zip => '98155', :type => 'work'})
+      test_address.save()
+      expect(Address.all()).to(eq([test_address]))  
+    end
+  end
 end
