@@ -76,11 +76,20 @@ describe(Contacts) do
   end
 
   describe('#add_phone') do
-    it("adds a phone number ta an existing contact") do
+    it("adds a phone number to an existing contact") do
       test_contact = Contacts.new("John", "Smith", "Programmer", "The Matrix")
       test_phone = Phone.new(503, 5551234, "work")
       test_contact.add_phone(test_phone)
       expect(test_contact.info()).to(eq([test_phone]))
+    end
+  end
+
+  describe('#add_address') do
+    it("adds an address to an existing contact") do
+      test_contact = Contacts.new("John", "Smith", "Programmer", "The Matrix")
+      test_address = Address.new({:street => '123 Main St', :city =>'Sunnyside', :state => 'OR', :zip => '98155', :type => 'work'})
+      test_contact.add_address(test_address)
+      expect(test_contact.info()).to(eq([test_address]))
     end
   end
 end
