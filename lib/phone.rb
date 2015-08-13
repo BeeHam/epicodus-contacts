@@ -26,4 +26,8 @@ class Phone
   define_method(:save) do
     @@phone.push(self)
   end
+
+  define_singleton_method(:clear) do
+    @@phone = []
+  end
 end

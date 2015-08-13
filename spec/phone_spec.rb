@@ -39,4 +39,12 @@ describe('Phone') do
       expect(Phone.all()).to(eq([test_phone]))
     end
   end
+
+  describe('.clear') do
+    it("empties out all saved phone numbers") do
+      Phone.new(503, 5551234, "work")
+      Phone.clear()
+      expect(Phone.all()).to(eq([]))
+    end
+  end
 end
