@@ -25,4 +25,10 @@ describe('Phone') do
       expect(test_phone.type()).to(eq("work"))
     end
   end
+
+  describe('.all') do
+    it("is empty at first") do
+      expect(Phone.all()).to(eq([]))
+    end
+  end
 end
