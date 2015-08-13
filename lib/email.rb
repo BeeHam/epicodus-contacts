@@ -15,6 +15,10 @@ class Email
   end
 
   define_singleton_method(:all) do
-    @@email = []
+    @@email
+  end
+
+  define_method(:save) do
+    @@email.push(self)
   end
 end
